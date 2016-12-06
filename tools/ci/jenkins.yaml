@@ -59,3 +59,22 @@
       - shell: /usr/bin/env bash tools/ci/precommit
     publishers:
       - stash-notifier
+
+- job:
+    name: plops-onboarding_image_build
+    node: docker
+    defaults: onboarding_validate
+    scm:
+      - develop
+    triggers:
+      - pollscm:
+          cron: '@yearly'
+    properties:
+      - delivery-pipeline:
+          stage: 'prod'
+          task: 'deploy'
+    builders:
+      - shell: |
+          /usr/bin/env bash test 0 # autosucceed
+    publishers:
+      - stash-notifier
