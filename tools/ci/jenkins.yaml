@@ -1,0 +1,61 @@
+# simple defaults
+- defaults:
+    name: onboarding_validate
+    project-type: freestyle
+    node: docker
+    logrotate:
+      daysToKeep: 30
+    wrappers:
+      - timeout:
+          timeout: 150
+          timeout-var: BUILD_TIMEOUT
+          type: absolute
+      - timestamps
+- scm:
+    name: precommit
+    scm:
+      - git:
+          url: ssh://git@stash.jiveland.com/comsrv/onboarding.git
+          credentials-id: aa954545-ff1d-4b63-9e67-50f5cde65fba
+          branches:
+            - '**/feature/*'
+            - '**/hotfix/*'
+- scm:
+    name: develop
+    scm:
+      - git:
+          url: ssh://git@stash.jiveland.com/comsrv/onboarding.git
+          credentials-id: aa954545-ff1d-4b63-9e67-50f5cde65fba
+          branches:
+            - 'develop'
+
+# notify stash
+- publisher:
+    name: stash-notifier
+    publishers:
+      - conditional-publisher:
+          - condition-kind: always
+            action:
+              - stash:
+                  url: https://stash.jiveland.com
+                  password: ''
+                  credentials-id: '9b02c718-b873-4d8c-a27b-801de5e4d0af'
+
+- job:
+    name: plops-onboarding_precommit
+    node: baremetal
+    defaults: onboarding_validate
+    concurrent: true
+    properties:
+      - throttle:
+          max-total: '0'
+          max-per-node: '1'
+    scm:
+      - precommit
+    triggers:
+      - pollscm:
+          cron: '@yearly'
+    builders:
+      - shell: /usr/bin/env bash tools/ci/precommit
+    publishers:
+      - stash-notifier
