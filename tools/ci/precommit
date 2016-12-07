@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 
 # First make sure no tests have been edited
-if git rev-parse --quiet --verify HEAD > /dev/null
-then
-    against=HEAD
-else
-    # Initial commit: diff against an empty tree object
-    against=ffe715aeabeab24a32639cfe95da1c4e2a0da576
-fi
+against="origin/develop"
 
 ERRORS="false"
 
