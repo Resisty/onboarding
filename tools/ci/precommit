@@ -1,5 +1,32 @@
 #!/usr/bin/env bash
 
+# First make sure no tests have been edited
+if git rev-parse --quiet --verify HEAD > /dev/null
+then
+    against=HEAD
+else
+    # Initial commit: diff against an empty tree object
+    against=ffe715aeabeab24a32639cfe95da1c4e2a0da576
+fi
+
+ERRORS="false"
+
+# Get list of files changed
+FILE_LIST=`git diff-index --diff-filter=AM --name-only --cached $against
+
+for file in $FILE_LIST
+do
+    # make sure file is in onboardtests directory
+    if ! `echo $file | grep "onboardtests" >/dev/null 2>&1` ; then
+      ERRORS="true"
+      echo "Error: Changing test files (${file}) is not a good way to pass tests!"
+    fi
+done
+
+if [ "$ERRORS" == "true" ] ; then
+   exit 1
+fi
+
 set -e
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
