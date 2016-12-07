@@ -12,7 +12,7 @@ fi
 ERRORS="false"
 
 # Get list of files changed
-FILE_LIST=`git diff-index --diff-filter=AM --name-only --cached $against
+FILE_LIST=`git diff-index --diff-filter=AM --name-only --cached $against`
 
 for file in $FILE_LIST
 do
