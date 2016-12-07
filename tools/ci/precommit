@@ -11,7 +11,7 @@ FILE_LIST=`git diff-index --diff-filter=AM --name-only --cached $against`
 for file in $FILE_LIST
 do
     # make sure file is in onboardtests directory
-    if ! `echo $file | grep "onboardtests" >/dev/null 2>&1` ; then
+    if `echo $file | grep "onboardtests" >/dev/null 2>&1` ; then
       ERRORS="true"
       echo "Error: Changing test files (${file}) is not a good way to pass tests!"
     fi
