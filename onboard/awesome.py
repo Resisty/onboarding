@@ -29,5 +29,9 @@ implement .split(): %s' % e.message)
         ''' Why settle for a decorator when we can also have a callable
             function?
         '''
-        return ' '.join([i for i in self.tokens])
+        return # TODO: Make this an awesome announcement using .tokens somehow
+    def is_awesome(self):
+        ''' Confirm that yes, this is awesome
+        '''
+        return # TODO: somehow validate the fact that yes, this is awesome
 

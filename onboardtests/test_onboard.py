@@ -40,9 +40,15 @@ class AwesomeTestCase(unittest.TestCase):
     def test_announce(self):
         ''' Test ability to announce that we're awesome
         '''
-        # __ IS INVALID
-        # PUT SOMETHING IN ITS PLACE TO FIX THE TEST!
-        self.assertEquals(self.awesome.announce(), __)
+        # Hmmm, looks like .announce() might need some work. Go check out:
+        # onboarding/onboard/awesome.py
+        self.assertEquals(self.awesome.announce(), "Yep, I'm definitely \
+awesome!")
+    def test_is_awesome(self):
+        ''' Test the fact that we're awesome
+        '''
+        # Blast, another incomplete function. Back to the drawing board!
+        self.assertTrue(self.awesome.is_awesome())
 
 def suite():
     ''' Create a suite of tests
