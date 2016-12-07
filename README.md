@@ -24,6 +24,8 @@ You must submit a pull request which passes the unit tests for the project. You 
     * then GOTO 7
     * else GOTO 4
 7. Make a pull request
+    1. `git add .` or `git add ${a_file_I_changed}`
+    1. `git commit -m "PLOPS-999 I made some changes!"`
     1. `j-review`
 8. Verify that the build was successful
 9. Have a libation, you did it!
