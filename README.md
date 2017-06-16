@@ -11,7 +11,7 @@ This project serves as an introduction to making
 
 You must submit a pull request which passes the unit tests for the project. You can verify that your changes have accomplished this before making your PR by doing the following:
 1. Set up virtualenv
-    1. `virtualenv . && source bin/activate`
+    1. `virtualenv . && source bin/activate && pip install -r requirements-dev.txt`
 2. See what tests have to pass
     1. `python run_tests.py`
 3. Create a branch for your work. This should be named after a JIRA task
