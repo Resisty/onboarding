@@ -34,9 +34,17 @@ You must submit a pull request which passes the unit tests for the project. You 
 
 Since you're reading this, you're on branch `homework01`. 
 
+Rather than using `python run_tests.py`, you'll verify your homework passes muster with:
+
+`python run_homework01.py`
+
 Create a new branch off of it and name it after yourself, something like
 
-`homework01_brian.auron`
+```
+git branch homework01_brian.auron
+git checkout $!
+git pull origin homework01
+```
 
 When your homework/tests are passing, push your branch up to stash:
 
