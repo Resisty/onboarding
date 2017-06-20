@@ -29,3 +29,17 @@ You must submit a pull request which passes the unit tests for the project. You 
     1. `j-review`
 8. Verify that the build was successful
 9. Have a libation, you did it!
+
+## Homework 01
+
+Since you're reading this, you're on branch `homework01`. 
+
+Create a new branch off of it and name it after yourself, something like
+
+`homework01_brian.auron`
+
+When your homework/tests are passing, push your branch up to stash:
+
+`git push origin homework01_brian.auron`
+
+Your instructors will pull your branch down and evaluate it.
