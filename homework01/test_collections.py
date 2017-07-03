@@ -55,7 +55,7 @@ class CollTestCase(unittest.TestCase):
     def test_counter(self):
         ''' Test that we know how counters work
         '''
-        self.assertEquals(__, self.count.most_common(6)[-1][0]))
+        self.assertEquals(__, self.count.most_common(6)[-1][0])
         self.count.subtract(collections.Counter([1,1,1]))
         self.assertEquals(__, self.count[1])
 
