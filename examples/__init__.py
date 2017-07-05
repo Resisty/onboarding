@@ -2,4 +2,6 @@
 '''
 __all__ = ['control_ex',
            'slice_ex',
-           'lambda_ex']
+           'lambda_ex',
+           'function_ex',
+           'class_ex']

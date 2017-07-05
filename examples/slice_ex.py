@@ -22,6 +22,9 @@ def comprehension_ex():
     print(odds)
     print(repetition)
     print(nested)
+    # You can also create a dict comprehension
+    squares  = {i:i**i for i in range(5)}
+    print(squares)
 
 def slice_ex():
     ''' A slice is an object which partitions sequences (e.g. list, tuples) but not
