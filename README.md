@@ -30,24 +30,10 @@ You must submit a pull request which passes the unit tests for the project. You 
 8. Verify that the build was successful
 9. Have a libation, you did it!
 
-## Homework 01
+## Homework
 
-Since you're reading this, you're on branch `homework01`. 
-
-Rather than using `python run_tests.py`, you'll verify your homework passes muster with:
-
-`python run_homework01.py`
-
-Create a new branch off of it and name it after yourself, something like
-
+First checkout your homework and set up your virtualenv. To make this simpler, there is a bash script which you can source:
 ```
-git branch homework01_brian.auron
-git checkout $!
-git pull origin homework01
+source checkout_homework.sh homeworkNN
 ```
-
-When your homework/tests are passing, push your branch up to stash:
-
-`git push origin homework01_brian.auron`
-
-Your instructors will pull your branch down and evaluate it.
+The argument `homeworkNN` is which homework you want to check out, e.g. `homework01`, `homework02`, etc.
