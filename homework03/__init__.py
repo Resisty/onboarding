@@ -1,3 +1,3 @@
 ''' define the value of __all__ for import *
 '''
-__all__ = ['algo_ex']
+__all__ = ['test_algo']
