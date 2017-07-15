@@ -25,7 +25,7 @@ class SliceTestCase(unittest.TestCase):
         ''' Test that we know what a two-argument slice does
         '''
         start = slice(2, 8)
-        self.assertFalse(__, self.iterable[start])
+        self.assertEquals(__, self.iterable[start])
     def test_step(self):
         ''' Test that we know what a three-argument slice does
         '''

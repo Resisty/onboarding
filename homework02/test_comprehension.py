@@ -20,7 +20,7 @@ class CompTestCase(unittest.TestCase):
         ''' Test that we know about expressions in comprehensions
         '''
         comp = [__]
-        self.assertEquals(comp, [0, 2, 4, 8])
+        self.assertEquals(comp, [1, 2, 4, 8])
     def test_nest(self):
         ''' Test that we know how to nest comprehensions
         '''
