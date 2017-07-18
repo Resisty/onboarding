@@ -18,15 +18,15 @@ class DiagDiff(object):
             [10, 8,  -12]]
        Sample Output:
            15
-   '''
-   def __init__(self, matrix):
-       ''' Initialization method
-       '''
-       # Do __init__ stuff
-   def run(self):
-       ''' Solve the problem
-       '''
-       return __
+    '''
+    def __init__(self, matrix):
+        ''' Initialization method
+        '''
+        # Do __init__ stuff
+    def run(self):
+        ''' Solve the problem
+        '''
+        return __
 
 class DiagTestCase(unittest.TestCase):
     ''' Test some stuff!
